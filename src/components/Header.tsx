@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Phone, ChevronDown } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -23,17 +23,22 @@ const Header = () => {
       {/* Top Bar - Dark Blue */}
       <div className="bg-[hsl(var(--hero-bg))] py-2.5 text-white">
         <div className="container mx-auto px-4 flex flex-wrap justify-center md:justify-between items-center text-sm gap-2">
-          <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1">
+          <div className="flex flex-wrap items-center justify-center gap-x-2 gap-y-1">
             <span>
-              <span className="text-white/70">CA License</span>{" "}
-              <span className="font-bold text-accent">#1121976</span>
+              <span className="font-bold text-accent">AV</span>{" "}
+              <span className="text-white">(661) 274-4297</span>
             </span>
-            <span className="hidden md:inline text-white/50">|</span>
+            <span className="text-white/50">|</span>
             <span>
-              <span className="text-white/70">BuildZoom Score:</span>{" "}
-              <span className="font-bold text-accent">92</span>
+              <span className="font-bold text-accent">SFV</span>{" "}
+              <span className="text-white">(818) 715-0024</span>
             </span>
-            <span className="hidden md:inline text-white/50">|</span>
+            <span className="text-white/50">|</span>
+            <span>
+              <span className="font-bold text-accent">VENTURA</span>{" "}
+              <span className="text-white">(805) 701-6654</span>
+            </span>
+            <span className="text-white/50">|</span>
             <span className="text-white/80">654 E Rancho Vista Blvd Suite A, Palmdale, CA 93550</span>
           </div>
           <a 
@@ -94,6 +99,46 @@ const Header = () => {
                 Services
                 <ChevronDown className="h-4 w-4" />
               </Link>
+              <Link
+                to="/projects"
+                className={`font-medium transition-colors ${
+                  isActive("/projects")
+                    ? "text-[hsl(var(--hero-bg))]"
+                    : "text-foreground hover:text-[hsl(var(--hero-bg))]"
+                }`}
+              >
+                Projects
+              </Link>
+              <Link
+                to="/gallery"
+                className={`font-medium transition-colors ${
+                  isActive("/gallery")
+                    ? "text-[hsl(var(--hero-bg))]"
+                    : "text-foreground hover:text-[hsl(var(--hero-bg))]"
+                }`}
+              >
+                Gallery
+              </Link>
+              <Link
+                to="/blog"
+                className={`font-medium transition-colors ${
+                  isActive("/blog")
+                    ? "text-[hsl(var(--hero-bg))]"
+                    : "text-foreground hover:text-[hsl(var(--hero-bg))]"
+                }`}
+              >
+                Blog
+              </Link>
+              <Link
+                to="/faq"
+                className={`font-medium transition-colors ${
+                  isActive("/faq")
+                    ? "text-[hsl(var(--hero-bg))]"
+                    : "text-foreground hover:text-[hsl(var(--hero-bg))]"
+                }`}
+              >
+                FAQ
+              </Link>
               <Link to="/contact">
                 <Button className="bg-[hsl(var(--nav-accent))] hover:bg-[hsl(145,63%,38%)] text-white px-6">
                   Contact
@@ -141,6 +186,42 @@ const Header = () => {
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Services
+              </Link>
+              <Link
+                to="/projects"
+                className={`font-medium py-2 ${
+                  isActive("/projects") ? "text-[hsl(var(--hero-bg))]" : "text-foreground"
+                }`}
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Projects
+              </Link>
+              <Link
+                to="/gallery"
+                className={`font-medium py-2 ${
+                  isActive("/gallery") ? "text-[hsl(var(--hero-bg))]" : "text-foreground"
+                }`}
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Gallery
+              </Link>
+              <Link
+                to="/blog"
+                className={`font-medium py-2 ${
+                  isActive("/blog") ? "text-[hsl(var(--hero-bg))]" : "text-foreground"
+                }`}
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Blog
+              </Link>
+              <Link
+                to="/faq"
+                className={`font-medium py-2 ${
+                  isActive("/faq") ? "text-[hsl(var(--hero-bg))]" : "text-foreground"
+                }`}
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                FAQ
               </Link>
               <Link to="/contact" onClick={() => setIsMobileMenuOpen(false)}>
                 <Button className="w-full bg-[hsl(var(--nav-accent))] hover:bg-[hsl(145,63%,38%)] text-white">
