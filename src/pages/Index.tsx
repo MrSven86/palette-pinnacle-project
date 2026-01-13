@@ -71,75 +71,33 @@ const Index = () => {
       <Header />
       
       <main className="flex-grow">
-        {/* Hero Section - Split Layout with Curved Background */}
-        <section className="relative overflow-hidden">
-          {/* Blue curved background */}
-          <div className="absolute inset-0 bg-[hsl(var(--hero-bg))]" style={{
-            clipPath: 'polygon(0 0, 65% 0, 55% 100%, 0 100%)'
-          }} />
+        {/* Hero Section - Full Bleed Background Image */}
+        <section 
+          className="relative min-h-[80vh] bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: `url(${heroImage})` }}
+        >
+          {/* Overlay for text readability */}
+          <div className="absolute inset-0 bg-gradient-to-r from-black/30 via-transparent to-transparent" />
           
-          <div className="container mx-auto px-4 relative z-10">
-            <div className="grid lg:grid-cols-2 gap-8 items-center min-h-[70vh] py-12">
-              {/* Left Content */}
-              <div className="text-white">
-                <p className="text-sm uppercase tracking-widest mb-4 text-white/80">
-                  SERVICING IN LOS ANGELES, CA
+          <div className="container mx-auto px-4 relative z-10 h-full flex items-center">
+            <div className="py-20 lg:py-32 max-w-2xl">
+              <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold mb-8 text-white leading-tight">
+                NVJ Painting Inc.
+              </h1>
+              
+              {/* Description with orange left border */}
+              <div className="border-l-4 border-primary pl-6 mb-10">
+                <p className="text-white/90 text-lg leading-relaxed">
+                  Give your home the fresh look it deserves with the expertise of NVJ Painting Inc. Contact us today for a free consultation and discover the difference our professional painters can make in your Los Angeles home!
                 </p>
-                <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-balance leading-tight">
-                  Professional Painting Built to Last
-                </h1>
-                
-                {/* Description with orange left border */}
-                <div className="border-l-4 border-primary pl-4 mb-8">
-                  <p className="text-white/90 leading-relaxed">
-                    Licensed C-33 contractor with BuildZoom score of 92. Transform your property with expert painting services backed by proven credentials. Contact us today for a free consultation and discover the difference our professional painters can make in your Los Angeles home!
-                  </p>
-                </div>
-                
-                <a href="tel:3235921043">
-                  <Button size="lg" className="bg-primary hover:bg-primary-hover text-primary-foreground text-lg px-8 py-6 rounded-full">
-                    <Phone className="mr-2 h-5 w-5" />
-                    CALL US TODAY!
-                  </Button>
-                </a>
               </div>
               
-              {/* Right Image - Rounded */}
-              <div className="relative flex justify-center lg:justify-end">
-                <div className="relative">
-                  <img 
-                    src={heroImage} 
-                    alt="Professional painting services in Los Angeles" 
-                    className="w-full max-w-md lg:max-w-lg object-cover rounded-[40%_60%_60%_40%/60%_40%_60%_40%]"
-                    style={{
-                      borderRadius: '60% 40% 50% 50% / 50% 50% 40% 60%'
-                    }}
-                  />
-                </div>
-              </div>
-            </div>
-            
-            {/* Trust Badges Row */}
-            <div className="py-8 border-t border-white/10">
-              <div className="flex flex-wrap justify-center lg:justify-start gap-8 lg:gap-16">
-                {trustBadgesLogos.map((badge, index) => (
-                  <div key={index} className="flex flex-col items-center">
-                    <span className={`font-bold text-lg ${
-                      badge.name === 'facebook' ? 'text-[#1877F2]' : 
-                      badge.name === 'yelp' ? 'text-[#D32323]' : 
-                      badge.name === 'HomeAdvisor' ? 'text-[#F68B24]' : 
-                      'text-foreground'
-                    }`}>
-                      {badge.name}
-                    </span>
-                    <div className="flex text-accent mt-1">
-                      {[...Array(badge.stars)].map((_, i) => (
-                        <Star key={i} className="h-4 w-4 fill-current" />
-                      ))}
-                    </div>
-                  </div>
-                ))}
-              </div>
+              <a href="tel:6612744297">
+                <Button size="lg" className="bg-primary hover:bg-primary-hover text-primary-foreground text-lg px-8 py-6 rounded-full font-bold">
+                  <Phone className="mr-2 h-5 w-5" />
+                  CALL US TODAY!
+                </Button>
+              </a>
             </div>
           </div>
         </section>
