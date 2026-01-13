@@ -27,6 +27,10 @@ All colors MUST be HSL.
     --accent: 40 86% 60%;
     --accent-foreground: 0 0% 20%;
 
+    --hero-bg: 215 85% 35%;
+    --hero-bg-light: 215 80% 45%;
+    --nav-accent: 145 63% 45%;
+
     --muted: 0 0% 99%;
     --muted-foreground: 0 0% 40%;
 

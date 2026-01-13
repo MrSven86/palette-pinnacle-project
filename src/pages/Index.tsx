@@ -10,6 +10,14 @@ import heroImage from "@/assets/hero-painting.jpg";
 import qualityImage from "@/assets/quality-work.jpg";
 import consultationImage from "@/assets/consultation.jpg";
 
+// Trust badge logos as text representations
+const trustBadgesLogos = [
+  { name: "Google", stars: 5 },
+  { name: "facebook", stars: 5 },
+  { name: "yelp", stars: 5 },
+  { name: "HomeAdvisor", stars: 5 },
+];
+
 const Index = () => {
   const services = [
     {
@@ -63,38 +71,72 @@ const Index = () => {
       <Header />
       
       <main className="flex-grow">
-        {/* Hero Section - Full Width */}
-        <section className="relative min-h-[80vh] flex items-center">
-          <div className="absolute inset-0">
-            <img 
-              src={heroImage} 
-              alt="Professional painting services in Los Angeles" 
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-r from-foreground/80 to-foreground/40" />
-          </div>
+        {/* Hero Section - Split Layout with Curved Background */}
+        <section className="relative overflow-hidden">
+          {/* Blue curved background */}
+          <div className="absolute inset-0 bg-[hsl(var(--hero-bg))]" style={{
+            clipPath: 'polygon(0 0, 65% 0, 55% 100%, 0 100%)'
+          }} />
           
           <div className="container mx-auto px-4 relative z-10">
-            <div className="max-w-2xl">
-              <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white text-balance">
-                Professional Painting Built to Last
-              </h1>
-              <p className="text-lg md:text-xl text-white/90 mb-8 leading-relaxed">
-                Licensed C-33 contractor with BuildZoom score of 92. Transform your property with expert painting services backed by proven credentials.
-              </p>
+            <div className="grid lg:grid-cols-2 gap-8 items-center min-h-[70vh] py-12">
+              {/* Left Content */}
+              <div className="text-white">
+                <p className="text-sm uppercase tracking-widest mb-4 text-white/80">
+                  SERVICING IN LOS ANGELES, CA
+                </p>
+                <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-balance leading-tight">
+                  Professional Painting Built to Last
+                </h1>
+                
+                {/* Description with orange left border */}
+                <div className="border-l-4 border-primary pl-4 mb-8">
+                  <p className="text-white/90 leading-relaxed">
+                    Licensed C-33 contractor with BuildZoom score of 92. Transform your property with expert painting services backed by proven credentials. Contact us today for a free consultation and discover the difference our professional painters can make in your Los Angeles home!
+                  </p>
+                </div>
+                
+                <a href="tel:3235921043">
+                  <Button size="lg" className="bg-primary hover:bg-primary-hover text-primary-foreground text-lg px-8 py-6 rounded-full">
+                    <Phone className="mr-2 h-5 w-5" />
+                    CALL US TODAY!
+                  </Button>
+                </a>
+              </div>
               
-              <Link to="/contact">
-                <Button size="lg" className="bg-primary hover:bg-primary-hover text-primary-foreground text-lg px-8 py-6">
-                  Request Free Quote
-                </Button>
-              </Link>
-
-              {/* Trust Badges */}
-              <div className="flex flex-wrap gap-6 mt-10">
-                {trustBadges.map((badge, index) => (
-                  <div key={index} className="flex items-center gap-2 text-white">
-                    <badge.icon className="h-5 w-5 text-accent" />
-                    <span className="text-sm font-medium">{badge.text}</span>
+              {/* Right Image - Rounded */}
+              <div className="relative flex justify-center lg:justify-end">
+                <div className="relative">
+                  <img 
+                    src={heroImage} 
+                    alt="Professional painting services in Los Angeles" 
+                    className="w-full max-w-md lg:max-w-lg object-cover rounded-[40%_60%_60%_40%/60%_40%_60%_40%]"
+                    style={{
+                      borderRadius: '60% 40% 50% 50% / 50% 50% 40% 60%'
+                    }}
+                  />
+                </div>
+              </div>
+            </div>
+            
+            {/* Trust Badges Row */}
+            <div className="py-8 border-t border-white/10">
+              <div className="flex flex-wrap justify-center lg:justify-start gap-8 lg:gap-16">
+                {trustBadgesLogos.map((badge, index) => (
+                  <div key={index} className="flex flex-col items-center">
+                    <span className={`font-bold text-lg ${
+                      badge.name === 'facebook' ? 'text-[#1877F2]' : 
+                      badge.name === 'yelp' ? 'text-[#D32323]' : 
+                      badge.name === 'HomeAdvisor' ? 'text-[#F68B24]' : 
+                      'text-foreground'
+                    }`}>
+                      {badge.name}
+                    </span>
+                    <div className="flex text-accent mt-1">
+                      {[...Array(badge.stars)].map((_, i) => (
+                        <Star key={i} className="h-4 w-4 fill-current" />
+                      ))}
+                    </div>
                   </div>
                 ))}
               </div>
