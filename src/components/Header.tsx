@@ -22,7 +22,7 @@ const Header = () => {
     <>
       {/* Top Bar - Dark Blue */}
       <div className="bg-[hsl(var(--hero-bg))] py-2.5 text-white">
-        <div className="container mx-auto px-4 flex flex-wrap justify-center md:justify-between items-center text-sm gap-2">
+        <div className="container mx-auto px-4 flex justify-center items-center text-sm">
           <div className="flex flex-wrap items-center justify-center gap-x-2 gap-y-1">
             <span>
               <span className="font-bold text-accent">AV</span>{" "}
@@ -41,12 +41,6 @@ const Header = () => {
             <span className="text-white/50">|</span>
             <span className="text-white/80">654 E Rancho Vista Blvd Suite A, Palmdale, CA 93550</span>
           </div>
-          <a 
-            href="/contact" 
-            className="font-semibold hover:text-accent transition-colors underline"
-          >
-            Contact Us
-          </a>
         </div>
       </div>
 
