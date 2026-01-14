@@ -9,6 +9,7 @@ import { Check, Phone, Shield, Award, Star, PaintBucket, Paintbrush, Home, Build
 import heroImage from "@/assets/hero-painting.jpg";
 import qualityImage from "@/assets/quality-work.jpg";
 import consultationImage from "@/assets/consultation.jpg";
+import reviewWidget from "@/assets/review-widget.png";
 
 // Trust badge logos as text representations
 const trustBadgesLogos = [
@@ -85,8 +86,8 @@ const Index = () => {
           </a>
           
           <div className="container mx-auto px-4 relative z-10 h-full flex flex-col items-center justify-center text-center py-20">
-            {/* Red Tagline */}
-            <p className="text-primary font-bold text-xl md:text-2xl italic mb-4">
+            {/* White Tagline */}
+            <p className="text-white font-bold text-xl md:text-2xl italic mb-4">
               Affordable, friendly and ready to paint!
             </p>
             
@@ -97,16 +98,9 @@ const Index = () => {
               Team
             </h1>
             
-            {/* Google Rating */}
-            <div className="flex items-center gap-2 mb-6">
-              <span className="text-white font-semibold">4.9 Stars</span>
-              <div className="flex text-accent">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="h-5 w-5 fill-current" />
-                ))}
-              </div>
-              <span className="text-white">1249 reviews on</span>
-              <svg className="h-5 w-5 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M12.48 10.92v3.28h7.84c-.24 1.84-.853 3.187-1.787 4.133-1.147 1.147-2.933 2.4-6.053 2.4-4.827 0-8.6-3.893-8.6-8.72s3.773-8.72 8.6-8.72c2.6 0 4.507 1.027 5.907 2.347l2.307-2.307C18.747 1.44 16.133 0 12.48 0 5.867 0 .307 5.387.307 12s5.56 12 12.173 12c3.573 0 6.267-1.173 8.373-3.36 2.16-2.16 2.84-5.213 2.84-7.667 0-.76-.053-1.467-.173-2.053H12.48z"/></svg>
+            {/* Google Rating Widget */}
+            <div className="mb-6">
+              <img src={reviewWidget} alt="4.9 Stars - reviews on Google" className="h-6 md:h-8" />
             </div>
             
             {/* Description */}

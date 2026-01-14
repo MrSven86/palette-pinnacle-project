@@ -29,18 +29,6 @@ const Header = () => {
             <span className="text-white">Voted BEST Painting & Concrete Coatings Contractors for over 15 years!</span>
           </div>
           
-          {/* Center - Secondary Nav */}
-          <nav className="hidden lg:flex items-center gap-6">
-            <Link to="/contact" className="text-white hover:text-white/80 transition-colors">CONTACT</Link>
-            <Link to="/blog" className="text-white hover:text-white/80 transition-colors">BLOG</Link>
-            <Link to="/service-areas" className="text-white hover:text-white/80 transition-colors">SERVICE AREAS</Link>
-            <Link to="/careers" className="text-white hover:text-white/80 transition-colors">CAREERS</Link>
-            <div className="flex items-center gap-1 text-white hover:text-white/80 transition-colors cursor-pointer">
-              ABOUT
-              <ChevronDown className="h-4 w-4" />
-            </div>
-          </nav>
-          
           {/* Right - Phone */}
           <a href="tel:6612744297" className="flex items-center gap-2 text-white hover:text-white/80 transition-colors">
             <Phone className="h-5 w-5" />
