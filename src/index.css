@@ -9,81 +9,87 @@ All colors MUST be HSL.
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 0 0% 20%;
+    --foreground: 205 100% 27%;
 
     --card: 0 0% 100%;
-    --card-foreground: 0 0% 20%;
+    --card-foreground: 205 100% 27%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 20%;
+    --popover-foreground: 205 100% 27%;
 
-    --primary: 358 82% 52%;
+    --primary: 15 100% 60%;
     --primary-foreground: 0 0% 100%;
-    --primary-hover: 358 77% 45%;
+    --primary-hover: 15 100% 52%;
 
-    --secondary: 120 62% 40%;
+    --secondary: 205 100% 27%;
     --secondary-foreground: 0 0% 100%;
 
-    --accent: 40 86% 60%;
-    --accent-foreground: 0 0% 20%;
+    --accent: 44 98% 54%;
+    --accent-foreground: 205 100% 27%;
 
-    --hero-bg: 215 85% 35%;
-    --hero-bg-light: 215 80% 45%;
-    --nav-accent: 145 63% 45%;
+    --tertiary: 44 98% 54%;
+    --tertiary-foreground: 205 100% 27%;
 
-    --muted: 0 0% 99%;
-    --muted-foreground: 0 0% 40%;
+    --hero-bg: 205 100% 27%;
+    --hero-bg-light: 205 80% 40%;
+    --nav-accent: 15 100% 60%;
+
+    --muted: 210 33% 98%;
+    --muted-foreground: 205 60% 40%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 0 0% 91%;
-    --input: 0 0% 91%;
-    --ring: 358 82% 52%;
+    --border: 210 20% 90%;
+    --input: 210 20% 90%;
+    --ring: 15 100% 60%;
 
     --radius: 0.25rem;
 
-    --text-medium: 0 0% 33%;
-    --text-light: 0 0% 40%;
-    --text-lighter: 0 0% 60%;
+    --text-medium: 205 40% 30%;
+    --text-light: 205 30% 40%;
+    --text-lighter: 205 20% 55%;
 
     --font-heading: 'General Sans', sans-serif;
     --font-body: 'Roboto', sans-serif;
   }
 
   .dark {
-    --background: 0 0% 10%;
+    --background: 205 100% 10%;
     --foreground: 0 0% 95%;
 
-    --card: 0 0% 10%;
+    --card: 205 100% 10%;
     --card-foreground: 0 0% 95%;
 
-    --popover: 0 0% 10%;
+    --popover: 205 100% 10%;
     --popover-foreground: 0 0% 95%;
 
-    --primary: 358 82% 52%;
+    --primary: 15 100% 60%;
     --primary-foreground: 0 0% 100%;
-    --primary-hover: 358 77% 45%;
+    --primary-hover: 15 100% 52%;
 
-    --secondary: 120 62% 40%;
+    --secondary: 205 100% 40%;
     --secondary-foreground: 0 0% 100%;
 
-    --accent: 40 86% 60%;
-    --accent-foreground: 0 0% 20%;
+    --accent: 44 98% 54%;
+    --accent-foreground: 205 100% 10%;
 
-    --muted: 0 0% 15%;
-    --muted-foreground: 0 0% 65%;
+    --tertiary: 44 98% 54%;
+    --tertiary-foreground: 205 100% 10%;
+
+    --muted: 205 50% 15%;
+    --muted-foreground: 205 30% 65%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 95%;
 
-    --border: 0 0% 20%;
-    --input: 0 0% 20%;
-    --ring: 358 82% 52%;
+    --border: 205 40% 20%;
+    --input: 205 40% 20%;
+    --ring: 15 100% 60%;
 
-    --text-medium: 0 0% 70%;
-    --text-light: 0 0% 60%;
-    --text-lighter: 0 0% 50%;
+    --text-medium: 205 20% 70%;
+    --text-light: 205 15% 60%;
+    --text-lighter: 205 10% 50%;
   }
 }
 
