@@ -104,7 +104,7 @@ const Index = () => {
                 ))}
               </div>
               <span className="text-white/80">1249 reviews on</span>
-              <img src={googleIcon} alt="Google" className="h-6 w-6" />
+              <img src={googleIcon} alt="Google" className="h-6 object-contain" />
             </div>
             
             {/* Description */}
@@ -121,7 +121,7 @@ const Index = () => {
                 </Button>
               </Link>
               <a href="tel:6612744297">
-                <Button size="lg" variant="outline" className="border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground text-lg px-10 py-6 font-bold uppercase tracking-wide bg-transparent">
+                <Button size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-primary text-lg px-10 py-6 font-bold uppercase tracking-wide bg-transparent">
                   Call
                 </Button>
               </a>
