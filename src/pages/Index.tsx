@@ -5,11 +5,14 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Check, Phone, Shield, Award, Star, PaintBucket, Paintbrush, Home, Building, Warehouse } from "lucide-react";
+import { Check, Phone, Shield, Award, Star, PaintBucket, Paintbrush, Home, Building, Warehouse, ChevronLeft, ChevronRight } from "lucide-react";
 import heroImage from "@/assets/hero-painting.jpg";
 import qualityImage from "@/assets/quality-work.jpg";
 import consultationImage from "@/assets/consultation.jpg";
 import googleIcon from "@/assets/google-icon.png";
+import googleGIcon from "@/assets/google-g-icon.png";
+import starIcon from "@/assets/star-icon.png";
+import verifiedIcon from "@/assets/verified-icon.png";
 
 // Trust badge logos as text representations
 const trustBadgesLogos = [
@@ -45,19 +48,36 @@ const Index = () => {
 
   const testimonials = [
     {
-      name: "Alex G.",
-      text: "Hiring NVJ was the best choice we made. The attention to detail was incredible and they finished on time.",
-      rating: 5
+      name: "A Kee To Paradise LLC",
+      date: "2025-04-08",
+      text: "Justin and his crew freshened our exterior and painted the pool deck. The professionalism and expertise",
+      avatar: null,
+      avatarColor: "bg-emerald-600",
+      avatarImage: true
     },
     {
-      name: "Home Dwellers",
-      text: "Very easy to work with, clean work, quality results. Would recommend to anyone looking for a painter.",
-      rating: 5
+      name: "Dennis Sullivan",
+      date: "2025-03-24",
+      text: "The team did a fantastic job with the drywall repair at our home. Very good quality, customer service",
+      avatar: "D",
+      avatarColor: "bg-orange-600",
+      avatarImage: false
     },
     {
-      name: "SoiBean C.",
-      text: "I was very impressed with their professionalism. The team was punctual, respectful, and delivered fantastic results.",
-      rating: 5
+      name: "May Then",
+      date: "2025-03-24",
+      text: "Job completed in a timely manner as promised. Excellent results. Professional polite workers with",
+      avatar: "M",
+      avatarColor: "bg-purple-600",
+      avatarImage: false
+    },
+    {
+      name: "Chris Cap",
+      date: "2025-03-22",
+      text: "Highly recommend Vegas painting. Front the first call to the last conversation with Justin it was such",
+      avatar: "B",
+      avatarColor: "bg-amber-700",
+      avatarImage: false
     }
   ];
 
@@ -215,59 +235,64 @@ const Index = () => {
         <section className="py-20 bg-background">
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
-              <h2 className="font-heading text-3xl md:text-4xl font-bold mb-4">
-                Satisfied Customers
+              <p className="text-green-600 font-semibold uppercase tracking-wider text-sm mb-2 italic">OUR REVIEWS</p>
+              <h2 className="font-heading text-2xl md:text-3xl lg:text-4xl font-bold uppercase tracking-wide">
+                TRUSTED BY HOMEOWNERS OF PORT ST LUCIE
               </h2>
-              <p className="text-text-medium">What Our Customers Say</p>
             </div>
 
-            {/* Google Rating */}
-            <div className="flex flex-col md:flex-row items-center justify-between mb-8 p-6 bg-muted rounded-lg">
-              <div className="flex items-center gap-4 mb-4 md:mb-0">
-                <div className="font-heading font-bold">
-                  <span className="text-lg">Excellent on Google</span>
-                  <div className="flex items-center gap-1 text-accent">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="h-4 w-4 fill-current" />
-                    ))}
-                  </div>
-                </div>
-              </div>
-              <a 
-                href="#" 
-                className="text-primary font-medium text-sm hover:underline"
-              >
-                Write a Review
-              </a>
-            </div>
-
-            <div className="grid md:grid-cols-3 gap-6">
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               {testimonials.map((testimonial, index) => (
-                <Card key={index} className="border shadow-sm">
-                  <CardContent className="p-6">
-                    <div className="flex items-center gap-3 mb-4">
-                      <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
-                        <span className="text-primary font-bold">{testimonial.name[0]}</span>
-                      </div>
-                      <div>
-                        <p className="font-semibold">{testimonial.name}</p>
-                        <div className="flex text-accent">
-                          {[...Array(testimonial.rating)].map((_, i) => (
-                            <Star key={i} className="h-3 w-3 fill-current" />
-                          ))}
+                <Card key={index} className="border border-gray-200 shadow-sm rounded-lg">
+                  <CardContent className="p-5">
+                    {/* Header with avatar, name, date, and Google icon */}
+                    <div className="flex items-start justify-between mb-3">
+                      <div className="flex items-center gap-3">
+                        <div className={`w-10 h-10 rounded-full ${testimonial.avatarColor} flex items-center justify-center text-white font-semibold`}>
+                          {testimonial.avatarImage ? (
+                            <img src={qualityImage} alt={testimonial.name} className="w-full h-full rounded-full object-cover" />
+                          ) : (
+                            testimonial.avatar
+                          )}
+                        </div>
+                        <div>
+                          <p className="font-semibold text-sm">{testimonial.name}</p>
+                          <p className="text-gray-400 text-xs">{testimonial.date}</p>
                         </div>
                       </div>
+                      <img src={googleGIcon} alt="Google" className="h-5 w-5" />
                     </div>
-                    <p className="text-text-medium text-sm leading-relaxed">"{testimonial.text}"</p>
+                    
+                    {/* Stars with verified badge */}
+                    <div className="flex items-center gap-1 mb-3">
+                      {[...Array(5)].map((_, i) => (
+                        <img key={i} src={starIcon} alt="star" className="h-4 w-4" />
+                      ))}
+                      <img src={verifiedIcon} alt="verified" className="h-4 w-4 ml-1" />
+                    </div>
+                    
+                    {/* Review text */}
+                    <p className="text-text-medium text-sm leading-relaxed mb-3">
+                      {testimonial.text}
+                    </p>
+                    
+                    {/* Read more link */}
+                    <button className="text-gray-500 text-sm hover:text-gray-700">
+                      Read more
+                    </button>
                   </CardContent>
                 </Card>
               ))}
             </div>
 
-            <div className="text-center mt-8">
-              <Button variant="outline" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground">
-                Read More
-              </Button>
+            {/* Navigation arrows */}
+            <div className="flex justify-end gap-2 mt-8">
+              <button className="w-10 h-10 border-2 border-green-600 rounded flex items-center justify-center text-green-600 hover:bg-green-600 hover:text-white transition-colors">
+                <ChevronLeft className="h-5 w-5" />
+              </button>
+              <button className="w-10 h-10 border-2 border-green-600 rounded flex items-center justify-center text-green-600 hover:bg-green-600 hover:text-white transition-colors">
+                <ChevronRight className="h-5 w-5" />
+              </button>
             </div>
           </div>
         </section>
