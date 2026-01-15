@@ -48,8 +48,8 @@ const Header = () => {
             {/* Logo */}
             <Link to="/" className="flex items-center">
               <div className="font-heading text-2xl font-bold">
-                <span className="text-primary">NVJ</span>{" "}
-                <span className="text-foreground italic">Painting</span>
+                <span className="text-black">NVJ</span>{" "}
+                <span className="text-black italic">Painting</span>
               </div>
             </Link>
 
@@ -60,30 +60,30 @@ const Header = () => {
                 className={`font-semibold uppercase tracking-wide transition-colors ${
                   isActive("/")
                     ? "text-primary"
-                    : "text-foreground hover:text-primary"
+                    : "text-black hover:text-primary"
                 }`}
               >
                 Home
               </Link>
-              <div className="flex items-center gap-1 font-semibold uppercase tracking-wide text-foreground hover:text-primary transition-colors cursor-pointer">
+              <div className="flex items-center gap-1 font-semibold uppercase tracking-wide text-black hover:text-primary transition-colors cursor-pointer">
                 Residential
                 <ChevronDown className="h-4 w-4" />
               </div>
-              <div className="flex items-center gap-1 font-semibold uppercase tracking-wide text-foreground hover:text-primary transition-colors cursor-pointer">
+              <div className="flex items-center gap-1 font-semibold uppercase tracking-wide text-black hover:text-primary transition-colors cursor-pointer">
                 Commercial
                 <ChevronDown className="h-4 w-4" />
               </div>
-              <div className="flex items-center gap-1 font-semibold uppercase tracking-wide text-foreground hover:text-primary transition-colors cursor-pointer">
+              <div className="flex items-center gap-1 font-semibold uppercase tracking-wide text-black hover:text-primary transition-colors cursor-pointer">
                 Cabinets
                 <ChevronDown className="h-4 w-4" />
               </div>
-              <div className="flex items-center gap-1 font-semibold uppercase tracking-wide text-foreground hover:text-primary transition-colors cursor-pointer">
+              <div className="flex items-center gap-1 font-semibold uppercase tracking-wide text-black hover:text-primary transition-colors cursor-pointer">
                 Concrete Coatings
                 <ChevronDown className="h-4 w-4" />
               </div>
               <Link
                 to="/services"
-                className="font-semibold uppercase tracking-wide text-foreground hover:text-primary transition-colors"
+                className="font-semibold uppercase tracking-wide text-black hover:text-primary transition-colors"
               >
                 Garage Storage
               </Link>
