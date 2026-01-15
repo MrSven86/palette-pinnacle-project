@@ -5,7 +5,9 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Check, Phone, Shield, Award, Star, PaintBucket, Paintbrush, Home, Building, Warehouse, ChevronLeft, ChevronRight } from "lucide-react";
+import { Check, Phone, Shield, Award, Star, PaintBucket, Paintbrush, Home, Building, Warehouse, ChevronLeft, ChevronRight, MapPin } from "lucide-react";
+import { Checkbox } from "@/components/ui/checkbox";
+import { Label } from "@/components/ui/label";
 import heroImage from "@/assets/hero-painting.jpg";
 import qualityImage from "@/assets/quality-work.jpg";
 import consultationImage from "@/assets/consultation.jpg";
@@ -370,69 +372,126 @@ const Index = () => {
           </div>
         </section>
 
-        {/* Quote Form Section */}
-        <section className="py-20 bg-background">
-          <div className="container mx-auto px-4">
-            <div className="text-center mb-12">
-              <h2 className="font-heading text-3xl md:text-4xl font-bold mb-4">
-                GET A FREE QUOTE
-              </h2>
-              <p className="text-text-medium max-w-2xl mx-auto">
-                Ready to transform your space? Fill out the form below and we'll get back to you within 24 hours with a free, no-obligation estimate.
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-2 gap-12 items-center max-w-5xl mx-auto">
-              <div className="relative">
-                <img 
-                  src={qualityImage} 
-                  alt="Professional painting team" 
-                  className="rounded-lg shadow-xl w-full"
-                />
-                <div className="absolute bottom-4 left-4 bg-primary text-primary-foreground px-6 py-3 rounded-lg">
-                  <p className="text-2xl font-bold">20+ years</p>
-                  <p className="text-sm opacity-90">of Experience!</p>
-                </div>
+        {/* CTA / Consultation Section */}
+        <section 
+          className="relative py-20 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: `url(${consultationImage})` }}
+        >
+          {/* Blue overlay */}
+          <div className="absolute inset-0 bg-secondary/80" />
+          
+          <div className="container mx-auto px-4 relative z-10">
+            <div className="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+              {/* Left: Form Card */}
+              <div className="bg-white rounded-lg shadow-xl p-8 md:p-10">
+                <h2 className="text-secondary font-heading text-2xl md:text-3xl font-medium mb-8 text-center">
+                  Schedule a Consultation
+                </h2>
+                
+                <form className="space-y-5">
+                  {/* Name */}
+                  <div>
+                    <Label className="text-sm font-medium text-foreground mb-2 block">
+                      Name <span className="text-red-500">*</span>
+                    </Label>
+                    <Input placeholder="Name" className="border border-gray-300 bg-white" />
+                  </div>
+                  
+                  {/* Email and Phone */}
+                  <div className="grid grid-cols-2 gap-4">
+                    <div>
+                      <Label className="text-sm font-medium text-foreground mb-2 block">
+                        Email <span className="text-red-500">*</span>
+                      </Label>
+                      <Input placeholder="Email" type="email" className="border border-gray-300 bg-white" />
+                    </div>
+                    <div>
+                      <Label className="text-sm font-medium text-foreground mb-2 block">
+                        Phone Number <span className="text-red-500">*</span>
+                      </Label>
+                      <Input placeholder="Phone Number" type="tel" className="border border-gray-300 bg-white" />
+                    </div>
+                  </div>
+                  
+                  {/* City, State */}
+                  <div>
+                    <Label className="text-sm font-medium text-foreground mb-2 block">
+                      City, State <span className="text-red-500">*</span>
+                    </Label>
+                    <Input placeholder="City, State" className="border border-gray-300 bg-white" />
+                  </div>
+                  
+                  {/* Interested in checkboxes */}
+                  <div>
+                    <Label className="text-sm font-medium text-foreground mb-3 block">
+                      Interested in...
+                    </Label>
+                    <div className="space-y-3">
+                      <div className="flex items-center space-x-2">
+                        <Checkbox id="apartment" />
+                        <label htmlFor="apartment" className="text-sm text-foreground cursor-pointer">
+                          Apartment painting
+                        </label>
+                      </div>
+                      <div className="flex items-center space-x-2">
+                        <Checkbox id="interior" />
+                        <label htmlFor="interior" className="text-sm text-foreground cursor-pointer">
+                          House painting (interior)
+                        </label>
+                      </div>
+                      <div className="flex items-center space-x-2">
+                        <Checkbox id="exterior" />
+                        <label htmlFor="exterior" className="text-sm text-foreground cursor-pointer">
+                          Exterior painting
+                        </label>
+                      </div>
+                      <div className="flex items-center space-x-2">
+                        <Checkbox id="other" />
+                        <label htmlFor="other" className="text-sm text-foreground cursor-pointer">
+                          Other
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <Button 
+                    type="submit" 
+                    className="w-full bg-secondary hover:bg-secondary/90 text-white py-3"
+                  >
+                    Send
+                  </Button>
+                </form>
               </div>
               
-              <form className="space-y-4">
-                <div className="grid grid-cols-2 gap-4">
-                  <Input placeholder="Name" className="bg-muted border-0" />
-                  <Input placeholder="Email" type="email" className="bg-muted border-0" />
+              {/* Right: Contact Info */}
+              <div className="text-white">
+                <p className="font-semibold text-sm mb-4">Contact NVJ Painting Inc.</p>
+                <h2 className="font-serif text-4xl md:text-5xl font-light mb-6 leading-tight italic">
+                  Leave a Lasting<br />
+                  First Impression
+                </h2>
+                <p className="text-white/90 leading-relaxed mb-8 max-w-md">
+                  No matter whether you're just moving into a new home and want to personalize it, or are starting to see cracks in your home's current paint jobs, NVJ Painting, Inc. is proud to offer advice on color schemes and applications.
+                </p>
+                
+                <div className="space-y-4">
+                  <a href="tel:3235921043" className="flex items-center gap-3 text-white hover:text-white/80 transition-colors">
+                    <Phone className="h-5 w-5" />
+                    <span>(323) 592-1043</span>
+                  </a>
+                  <div className="flex items-center gap-3 text-white">
+                    <MapPin className="h-5 w-5" />
+                    <span>Los Angeles, CA</span>
+                  </div>
                 </div>
-                <div className="grid grid-cols-2 gap-4">
-                  <Input placeholder="Phone" type="tel" className="bg-muted border-0" />
-                  <Input placeholder="Address" className="bg-muted border-0" />
-                </div>
-                <Textarea placeholder="Message" rows={4} className="bg-muted border-0" />
-                <Button 
-                  type="submit" 
-                  size="lg" 
-                  className="w-full bg-primary hover:bg-primary-hover text-primary-foreground"
-                >
-                  Get Your Free Quote →
-                </Button>
-              </form>
+              </div>
             </div>
           </div>
-        </section>
-
-        {/* CTA Section */}
-        <section className="py-16 bg-primary text-primary-foreground">
-          <div className="container mx-auto px-4 text-center">
-            <h2 className="font-heading text-3xl md:text-4xl font-bold mb-4">
-              Ready to Transform Your Space?
-            </h2>
-            <p className="text-lg mb-8 opacity-90 max-w-2xl mx-auto">
-              Get a free, no-obligation estimate from Los Angeles' trusted painting contractor
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="tel:3235921043">
-                <Button size="lg" variant="secondary" className="w-full sm:w-auto text-lg px-8">
-                  <Phone className="mr-2 h-5 w-5" />
-                  Call (323) 592-1043
-                </Button>
-              </a>
+          
+          {/* Copyright footer */}
+          <div className="absolute bottom-0 left-0 right-0 py-4 text-white/60 text-sm">
+            <div className="container mx-auto px-4">
+              © NVJ Painting, Inc. All Rights Reserved. 2024.
             </div>
           </div>
         </section>
