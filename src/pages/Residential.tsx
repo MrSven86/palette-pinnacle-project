@@ -3,7 +3,9 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Phone, Calendar, Check, ChevronLeft, ChevronRight } from "lucide-react";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Phone, Calendar, Check, CheckSquare } from "lucide-react";
 import residentialHero from "@/assets/residential-hero.png";
 import interiorPainting from "@/assets/interior-painting.png";
 import localCompany from "@/assets/local-company.png";
@@ -251,14 +253,128 @@ const Residential = () => {
                 <div key={i} className={`w-2 h-2 rounded-full ${i === 0 ? 'bg-secondary' : 'bg-border'}`} />
               ))}
             </div>
+          </div>
+        </section>
 
-            {/* CTA Button */}
-            <div className="text-center mt-8">
-              <Link to="/contact">
-                <Button className="bg-primary hover:bg-primary-hover text-primary-foreground font-semibold px-8">
-                  See More Reviews & Past Projects
-                </Button>
-              </Link>
+        {/* Contact CTA Section */}
+        <section
+          className="relative py-20 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: `url(${residentialHero})` }}
+        >
+          {/* Dark overlay */}
+          <div className="absolute inset-0 bg-black/60" />
+          
+          <div className="container mx-auto px-4 relative z-10">
+            <div className="grid md:grid-cols-2 gap-12 items-center">
+              {/* Left Content */}
+              <div className="text-white">
+                <p className="text-primary font-semibold italic mb-2">Contact NVJ Painting</p>
+                <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
+                  Ready to discuss your project?
+                </h2>
+                <p className="text-white/80 mb-8 text-lg">
+                  Fill out the form and we'll get back to you within <strong>2-3 hours (on business days)</strong>.
+                </p>
+                
+                {/* Benefits Grid */}
+                <div className="grid grid-cols-2 gap-4 mb-8">
+                  {[
+                    "Free Consultation",
+                    "Detailed proposal",
+                    "Upfront pricing",
+                    "Exceptional communication"
+                  ].map((benefit, index) => (
+                    <div key={index} className="flex items-center gap-2 bg-secondary/80 rounded-lg px-4 py-3">
+                      <CheckSquare className="w-5 h-5 text-white" />
+                      <span className="text-white font-medium">{benefit}</span>
+                    </div>
+                  ))}
+                </div>
+                
+                {/* Rating Badges */}
+                <div className="flex gap-4">
+                  <div className="bg-white rounded-lg px-4 py-3 flex items-center gap-3">
+                    <div className="text-red-500 font-bold text-xl">★</div>
+                    <div>
+                      <p className="text-xs text-gray-500">Yelp Rating</p>
+                      <div className="flex items-center gap-1">
+                        <span className="font-bold text-gray-800">4.6</span>
+                        <div className="flex">
+                          {[...Array(5)].map((_, i) => (
+                            <span key={i} className="text-red-500 text-sm">★</span>
+                          ))}
+                        </div>
+                      </div>
+                      <p className="text-xs text-gray-400">Based on 19 reviews</p>
+                    </div>
+                  </div>
+                  <div className="bg-white rounded-lg px-4 py-3 flex items-center gap-3">
+                    <img src={googleGIcon} alt="Google" className="w-6 h-6" />
+                    <div>
+                      <p className="text-xs text-gray-500">Google Rating</p>
+                      <div className="flex items-center gap-1">
+                        <span className="font-bold text-gray-800">5.0</span>
+                        <div className="flex">
+                          {[...Array(5)].map((_, i) => (
+                            <span key={i} className="text-amber-400 text-sm">★</span>
+                          ))}
+                        </div>
+                      </div>
+                      <p className="text-xs text-gray-400">Based on 7 reviews</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Right Form */}
+              <div className="bg-white rounded-xl p-8 shadow-2xl border-2 border-emerald-500">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-10 h-10 bg-secondary rounded-full flex items-center justify-center">
+                    <Phone className="w-5 h-5 text-white" />
+                  </div>
+                  <p className="font-semibold text-secondary">
+                    Call or text us at <a href="tel:6612744297" className="text-primary hover:underline">(661) 274-4297</a> or fill out the form below
+                  </p>
+                </div>
+                
+                <form className="space-y-4">
+                  <Input 
+                    placeholder="Full Name" 
+                    className="border-gray-200 focus:border-primary"
+                  />
+                  <div className="grid grid-cols-2 gap-4">
+                    <Input 
+                      placeholder="Email Address" 
+                      type="email"
+                      className="border-gray-200 focus:border-primary"
+                    />
+                    <Input 
+                      placeholder="Mobile Number" 
+                      type="tel"
+                      className="border-gray-200 focus:border-primary"
+                    />
+                  </div>
+                  <select className="w-full h-10 px-3 rounded-md border border-gray-200 text-gray-500 focus:border-primary focus:outline-none">
+                    <option value="">-- Select A Service --</option>
+                    <option value="interior">Interior Painting</option>
+                    <option value="exterior">Exterior Painting</option>
+                    <option value="cabinet">Cabinet Refinishing</option>
+                    <option value="commercial">Commercial Painting</option>
+                    <option value="concrete">Concrete Coatings</option>
+                  </select>
+                  <Input 
+                    placeholder="Your City (optional)" 
+                    className="border-gray-200 focus:border-primary"
+                  />
+                  <Textarea 
+                    placeholder="Tell us more about your project idea here"
+                    className="border-gray-200 focus:border-primary min-h-[100px]"
+                  />
+                  <Button className="w-full bg-emerald-500 hover:bg-emerald-600 text-white font-semibold py-6 text-lg">
+                    Submit
+                  </Button>
+                </form>
+              </div>
             </div>
           </div>
         </section>
