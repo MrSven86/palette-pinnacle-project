@@ -65,10 +65,17 @@ const Header = () => {
               >
                 Home
               </Link>
-              <div className="flex items-center gap-1 font-semibold uppercase tracking-wide text-black hover:text-primary transition-colors cursor-pointer">
+              <Link
+                to="/residential"
+                className={`flex items-center gap-1 font-semibold uppercase tracking-wide transition-colors cursor-pointer ${
+                  isActive("/residential")
+                    ? "text-primary"
+                    : "text-black hover:text-primary"
+                }`}
+              >
                 Residential
                 <ChevronDown className="h-4 w-4" />
-              </div>
+              </Link>
               <div className="flex items-center gap-1 font-semibold uppercase tracking-wide text-black hover:text-primary transition-colors cursor-pointer">
                 Commercial
                 <ChevronDown className="h-4 w-4" />
@@ -117,6 +124,15 @@ const Header = () => {
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Home
+              </Link>
+              <Link
+                to="/residential"
+                className={`font-medium py-2 ${
+                  isActive("/residential") ? "text-primary" : "text-foreground"
+                }`}
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Residential
               </Link>
               <Link
                 to="/about"
