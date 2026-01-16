@@ -15,6 +15,7 @@ import googleIcon from "@/assets/google-icon.png";
 import googleGIcon from "@/assets/google-g-icon.png";
 import starIcon from "@/assets/star-icon.png";
 import verifiedIcon from "@/assets/verified-icon.png";
+import laAreaMap from "@/assets/la-area-map.png";
 
 // Trust badge logos as text representations
 const trustBadgesLogos = [
@@ -346,11 +347,12 @@ const Index = () => {
         <section className="relative py-20 bg-primary/10">
           <div className="container mx-auto px-4">
             <div className="grid md:grid-cols-2 gap-12 items-center">
-              <div className="bg-muted rounded-lg h-[400px] flex items-center justify-center">
-                <div className="text-center">
-                  <p className="text-text-medium mb-2">Los Angeles Area Map</p>
-                  <p className="text-sm text-text-light">Serving LA, Glendale, San Fernando, San Dimas & more</p>
-                </div>
+              <div className="rounded-lg overflow-hidden shadow-lg h-[400px]">
+                <img 
+                  src={laAreaMap} 
+                  alt="Los Angeles Area Service Map" 
+                  className="w-full h-full object-cover"
+                />
               </div>
               <div>
                 <p className="text-primary font-medium mb-2 uppercase tracking-wider text-sm">Coverage</p>
